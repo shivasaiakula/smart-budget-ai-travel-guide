@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Indian Travel Palette - Warm Saffron + Deep Teal + Earthy Cream */
+    --background: 0.97 0.012 75;
+    --foreground: 0.18 0.04 40;
+
+    --card: 0.99 0.008 80;
+    --card-foreground: 0.18 0.04 40;
+
+    --popover: 0.99 0.008 80;
+    --popover-foreground: 0.18 0.04 40;
+
+    /* Saffron primary */
+    --primary: 0.62 0.18 47;
+    --primary-foreground: 0.99 0.005 80;
+
+    /* Warm cream secondary */
+    --secondary: 0.93 0.025 75;
+    --secondary-foreground: 0.25 0.06 40;
+
+    /* Muted warm */
+    --muted: 0.93 0.015 70;
+    --muted-foreground: 0.5 0.05 50;
+
+    /* Deep teal accent */
+    --accent: 0.45 0.12 195;
+    --accent-foreground: 0.98 0.005 195;
+
+    /* Destructive */
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.99 0.005 27;
+
+    --border: 0.88 0.03 70;
+    --input: 0.88 0.03 70;
+    --ring: 0.62 0.18 47;
+
+    /* Chart colors - Indian palette */
+    --chart-1: 0.62 0.18 47;
+    --chart-2: 0.45 0.12 195;
+    --chart-3: 0.72 0.15 85;
+    --chart-4: 0.55 0.15 145;
+    --chart-5: 0.65 0.2 25;
+
+    --sidebar: 0.96 0.018 70;
+    --sidebar-foreground: 0.18 0.04 40;
+    --sidebar-primary: 0.62 0.18 47;
+    --sidebar-primary-foreground: 0.99 0.005 80;
+    --sidebar-accent: 0.93 0.025 75;
+    --sidebar-accent-foreground: 0.25 0.06 40;
+    --sidebar-border: 0.88 0.03 70;
+    --sidebar-ring: 0.62 0.18 47;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-saffron {
+    background: linear-gradient(135deg, oklch(0.62 0.18 47) 0%, oklch(0.72 0.15 55) 100%);
+  }
+
+  .gradient-teal {
+    background: linear-gradient(135deg, oklch(0.35 0.12 195) 0%, oklch(0.45 0.1 210) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.06 35) 0%,
+      oklch(0.25 0.08 40) 40%,
+      oklch(0.35 0.1 195) 100%
+    );
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .mandala-bg {
+    background-image: radial-gradient(circle at 20% 50%, oklch(0.62 0.18 47 / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, oklch(0.45 0.12 195 / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, oklch(0.72 0.15 85 / 0.06) 0%, transparent 40%);
+  }
+
+  .indian-border {
+    border-image: linear-gradient(90deg, oklch(0.62 0.18 47), oklch(0.72 0.15 85), oklch(0.45 0.12 195)) 1;
+  }
+}
